@@ -138,7 +138,7 @@ func provisionCluster(cmd *cobra.Command, args []string) (retErr error) {
 		return err
 	}
 
-	cli, err := client.NewClientWithOpts(client.FromEnv)
+	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
 	if err != nil {
 		return err
 	}
